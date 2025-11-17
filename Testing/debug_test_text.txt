@@ -1,0 +1,63 @@
+6		age = age / test;
+7	}
+8	void f1(int age)
+9	{
+10		int local = 10;
+11		f2(age+local);
+12	}
+13	int main(int argc, char **argv)
+14	{
+15		int age = 33;
+16		f1(age);
+17		return 0;
+18	}
+19	
+Line number 20 out of range; .\test.c has 19 lines.
+1	#include <stdio.h>
+2	
+3	void f2(int age)
+4	{
+5		int test = age-age;
+6		age = age / test;
+7	}
+8	void f1(int age)
+9	{
+10		int local = 10;
+11		f2(age+local);
+12	}
+13	int main(int argc, char **argv)
+14	{
+15		int age = 33;
+16		f1(age);
+17		return 0;
+18	}
+19	
+Starting program: C:\Users\gremb\Desktop\School\lvl6\lvl3\Sem 1\Systems Programming\Testing/.\test.exe 
+[New Thread 8832.0x5dd8]
+[New Thread 8832.0x7d4]
+
+Program received signal SIGFPE, Arithmetic exception.
+0x00401471 in f2 (age=43) at .\test.c:6
+6		age = age / test;
+#0  0x00401471 in f2 (age=43) at .\test.c:6
+#1  0x00401497 in f1 (age=33) at .\test.c:11
+#2  0x004014bc in main (argc=1, argv=0xbd1608) at .\test.c:16
+#0  0x00401471 in f2 (age=43) at .\test.c:6
+#1  0x00401497 in f1 (age=33) at .\test.c:11
+#2  0x004014bc in main (argc=1, argv=0xbd1608) at .\test.c:16
+Breakpoint 1 at 0x401466: file .\test.c, line 5.
+The program being debugged has been started already.
+Start it from the beginning? (y or n) error return ../../gdb-7.6.1/gdb/windows-nat.c:1275 was 5
+Starting program: C:\Users\gremb\Desktop\School\lvl6\lvl3\Sem 1\Systems Programming\Testing/.\test.exe 
+[New Thread 19248.0x5af8]
+[New Thread 19248.0x1d8]
+
+Breakpoint 1, f2 (age=43) at .\test.c:5
+5		int test = age-age;
+6		age = age / test;
+
+Program received signal SIGFPE, Arithmetic exception.
+0x00401471 in f2 (age=43) at .\test.c:6
+6		age = age / test;
+test = 0
+age = 43
