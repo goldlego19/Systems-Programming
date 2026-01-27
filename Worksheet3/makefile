@@ -13,6 +13,9 @@ run_add:
 
 run_avg:
 	./avg.exe ${ARGS}
+# mingw32-make run_add ARGS=5,10
+# or
+# mingw32-make run_add ARGS="5 10"
 
 clean:
 	if exist add.exe del /F /Q add.exe
