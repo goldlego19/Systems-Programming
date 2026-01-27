@@ -18,6 +18,19 @@ int count_lines(const char *filename) {
     return count;
 }
 
+void display_file_content(const char *filename) {
+    FILE *file = fopen(filename, "r");
+    if (file == NULL) {
+        printf("Error opening file.\n");
+        return;
+    }
+    char ch;
+    while ((ch = fgetc(file)) != EOF) {
+        putchar(ch);
+    }
+    fclose(file);
+}
+
 int main() {
     int lines = count_lines("number.bin");
     if (lines == -1) {
@@ -26,4 +39,6 @@ int main() {
         printf("Number of lines: %d\n", lines);
     }
     return 0;
+
+    display_file_content("number.bin");
 }
