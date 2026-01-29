@@ -27,6 +27,7 @@ void display_file_content(const char *filename) {
     char ch;
     while ((ch = fgetc(file)) != EOF) {
         putchar(ch);
+	printf("-");
     }
     fclose(file);
 }
@@ -38,7 +39,6 @@ int main() {
     } else {
         printf("Number of lines: %d\n", lines);
     }
-    return 0;
 
     display_file_content("number.bin");
 }
